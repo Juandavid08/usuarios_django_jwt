@@ -1,0 +1,187 @@
+{
+    "info": {
+        "name": "Usuarios Django JWT",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Registrar Usuario",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:8000/usuarios/",
+                    "host": [
+                        "http://localhost:8000"
+                    ],
+                    "path": [
+                        "usuarios"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"email\": \"usuario@example.com\", \"nombre\": \"Usuario Test\", \"password\": \"123456\"}"
+                }
+            }
+        },
+        {
+            "name": "Listar Usuarios",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8000/usuarios/",
+                    "host": [
+                        "http://localhost:8000"
+                    ],
+                    "path": [
+                        "usuarios"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Obtener Usuario por ID",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8000/usuarios/1/",
+                    "host": [
+                        "http://localhost:8000"
+                    ],
+                    "path": [
+                        "usuarios",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Actualizar Usuario",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:8000/usuarios/1/",
+                    "host": [
+                        "http://localhost:8000"
+                    ],
+                    "path": [
+                        "usuarios",
+                        "1"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"nombre\": \"Usuario Modificado\", \"email\": \"usuario@example.com\"}"
+                }
+            }
+        },
+        {
+            "name": "Eliminar Usuario",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8000/usuarios/1/",
+                    "host": [
+                        "http://localhost:8000"
+                    ],
+                    "path": [
+                        "usuarios",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Iniciar Sesi\u00f3n",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:8000/usuarios/login/",
+                    "host": [
+                        "http://localhost:8000"
+                    ],
+                    "path": [
+                        "usuarios",
+                        "login"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"email\": \"usuario@example.com\", \"password\": \"123456\"}"
+                }
+            }
+        },
+        {
+            "name": "Solicitar Recuperaci\u00f3n de Contrase\u00f1a",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:8000/usuarios/password-reset/",
+                    "host": [
+                        "http://localhost:8000"
+                    ],
+                    "path": [
+                        "usuarios",
+                        "password-reset"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"email\": \"usuario@example.com\"}"
+                }
+            }
+        },
+        {
+            "name": "Cambiar Contrase\u00f1a",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:8000/usuarios/password-change/",
+                    "host": [
+                        "http://localhost:8000"
+                    ],
+                    "path": [
+                        "usuarios",
+                        "password-change"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"uid\": \"some_uid\", \"token\": \"some_token\", \"new_password\": \"nueva_clave\"}"
+                }
+            }
+        }
+    ]
+}
